@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+
+   --primary: #2eca6a;
+   --text: #555555;
+}
+
+body {
+   color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   color: black;
+}
+
+a:hover {
+   color: var(--primary);
+}
+
+.transition-500 {
+   transition-property: all;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+   transition-duration: 500ms;
+}
