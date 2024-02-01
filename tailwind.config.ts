@@ -12,6 +12,10 @@ const config: Config = {
         primary: "var(--primary)",
         text: "var(--text)",
       },
+      backgroundImage: {
+        "dark-gradient":
+          "linear-gradient(0deg, rgba(0,0,0,.8) 21%, rgba(255,255,255,0) 100%)",
+      },
     },
     container: {
       center: true,
