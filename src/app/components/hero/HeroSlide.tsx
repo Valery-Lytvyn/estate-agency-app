@@ -32,9 +32,12 @@ function HeroSlide({ slide }: { slide: SlideType }) {
               {lineTwo}
             </p>
           </div>
-          <div className="flex w-80 items-center justify-between gap-2 rounded-full border border-primary px-8 py-4 text-2xl">
-            <p>{type}</p>
-            <p className="font-bold text-primary">{formattedPrice}</p>
+
+          <div className="w-80 rounded-full border border-primary bg-opacity-20 bg-clip-padding backdrop-blur-sm backdrop-filter ">
+            <div className="flex  items-center justify-between gap-2 px-8 py-4 text-2xl ">
+              <p>{type}</p>
+              <p className="font-bold text-primary">{formattedPrice}</p>
+            </div>
           </div>
         </div>
       </div>

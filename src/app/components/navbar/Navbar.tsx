@@ -28,20 +28,22 @@ function Navbar() {
   };
   return (
     <>
-      <div className="container relative  z-50 bg-white py-6">
-        <nav className=" flex items-center justify-between gap-2  sm:gap-5">
-          <div className="md:hidden">
-            <MenuToggleButton
-              toggleHandler={toggleHandler}
-              isMenuOpen={isMenuOpen}
-            />
-          </div>
-          <Logo />
-          <div className="hidden  md:block">
-            <NavList />
-          </div>
-          <SearchButton />
-        </nav>
+      <div className="sticky left-0 right-0 top-0 z-50 bg-white shadow-lg ">
+        <div className="container py-6">
+          <nav className=" flex items-center justify-between gap-2  sm:gap-5">
+            <div className="md:hidden">
+              <MenuToggleButton
+                toggleHandler={toggleHandler}
+                isMenuOpen={isMenuOpen}
+              />
+            </div>
+            <Logo />
+            <div className="hidden  md:block">
+              <NavList />
+            </div>
+            <SearchButton />
+          </nav>
+        </div>
       </div>
       {/* mobile devices Navbar  */}
       <div className="block md:hidden">
@@ -49,14 +51,16 @@ function Navbar() {
           {isMenuOpen ? (
             <Modal clickHandler={toggleHandler}>
               <motion.div
-                className="container w-full max-w-[640px] bg-white  py-5 "
+                className=" w-full  bg-white "
                 key="menu"
                 initial="initial"
                 animate="animate"
                 exit="initial"
                 variants={menuMotion}
               >
-                <NavList />
+                <div className="container max-w-[640px] py-5">
+                  <NavList />
+                </div>
               </motion.div>
             </Modal>
           ) : null}

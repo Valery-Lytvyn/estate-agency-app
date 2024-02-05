@@ -8,11 +8,11 @@
    margin: 0;
 
    --primary: #2eca6a;
-   --text: #555555;
+   --secondary: #555555;
 }
 
 body {
-   color: var(--text);
+   color: var(--secondary);
 }
 
 h1,
@@ -24,9 +24,6 @@ h6 {
    color: black;
 }
 
-a:hover {
-   color: var(--primary);
-}
 
 .transition-500 {
    transition-property: all;

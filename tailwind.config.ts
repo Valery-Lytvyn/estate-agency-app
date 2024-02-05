@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "var(--primary)",
-        text: "var(--text)",
+        secondary: "var(--secondary)",
       },
       backgroundImage: {
         "dark-gradient":

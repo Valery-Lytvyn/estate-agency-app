@@ -12,7 +12,7 @@ function NavList() {
       {navListData.map(({ id, path, name }) => (
         <li
           key={id}
-          className={`relative flex items-center  py-1 text-xl font-bold`}
+          className="relative flex items-center  py-1 text-xl font-bold hover:text-primary "
         >
           <Link href={path}>{name}</Link>
           <div

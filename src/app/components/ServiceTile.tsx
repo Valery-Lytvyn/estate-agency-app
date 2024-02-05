@@ -15,7 +15,7 @@ function ServiceTile({ title, description }: SectionTitleProps) {
   };
   return (
     <div className="flex flex-col gap-4 py-5 ">
-      <div className="w-3/4  rounded-full border border-primary px-8 py-4">
+      <div className="w-3/4 rounded-full border  border-primary bg-gradient-to-r from-white to-gray-700/20 px-8 py-4">
         <h3 className="w-fit text-xl font-bold md:text-2xl">{title}</h3>
       </div>
       <p
