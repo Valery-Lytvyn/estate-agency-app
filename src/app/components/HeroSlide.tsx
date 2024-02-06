@@ -11,7 +11,7 @@ function HeroSlide({ slide }: { slide: SlideType }) {
 
   return (
     <div className={`w-ful h-[600px] lg:h-screen `}>
-      <div className="bg-dark-gradient absolute inset-0">
+      <div className="absolute inset-0  bg-dark-gradient">
         <Image
           src={bgImg}
           alt={subtitle}

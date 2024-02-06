@@ -3,7 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { SlideType } from "@/app/types";
-import HeroSlide from "../hero/HeroSlide";
+import HeroSlide from "../HeroSlide";
 import { Autoplay } from "swiper/modules";
 
 interface SliderProps {

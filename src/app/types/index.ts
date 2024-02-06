@@ -24,3 +24,25 @@ export interface AgentDetailsType {
   linkedin: string;
   description: string;
 }
+
+export interface PropertyDetailsType {
+  id: string;
+  agentId: string;
+  bgImg: string;
+  slideImg: string;
+  location: string;
+  postcode: string;
+  number: string;
+  addressOne: string;
+  addressTwo: string;
+  status: string;
+  type: string;
+  price: number;
+  area: number;
+  beds: number;
+  baths: number;
+  garages: number;
+  description: string;
+  details: string;
+  amenities: string[];
+}

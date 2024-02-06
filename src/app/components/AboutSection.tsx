@@ -4,13 +4,14 @@ import React from "react";
 function AboutSection() {
   return (
     <div className="flex flex-col-reverse gap-10 pt-14 md:flex-row">
-      <div className="stretch relative min-h-[400px] flex-1 pt-4">
+      <div className="stretch relative min-h-[400px] flex-1 overflow-hidden pt-4">
         <Image
           src="https://images.pexels.com/photos/7599735/pexels-photo-7599735.jpeg"
           alt="keys"
           fill
           priority
-          className="h-full object-cover"
+          sizes="100wv"
+          className="h-full w-full object-cover"
         />
       </div>
       <div className="flex-1">

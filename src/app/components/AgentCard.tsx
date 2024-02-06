@@ -34,8 +34,8 @@ function AgentCard({ agent }: AgentCardProps) {
         src={profileImg}
         alt={name}
         fill
-        sizes="100vw"
-        className="h-full w-full object-cover"
+        sizes="100wv"
+        className="h-auto w-full object-cover"
       />
       <AgentInfo
         isInfoCardShow={isInfoCardShow}
