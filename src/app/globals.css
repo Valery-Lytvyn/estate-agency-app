@@ -6,27 +6,33 @@
    box-sizing: border-box;
    padding: 0;
    margin: 0;
-
    --primary: #2eca6a;
    --secondary: #555555;
 }
 
+html {
+   height: 100%;
+   width: 100%;
+}
+
 body {
    color: var(--secondary);
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(247, 247, 247);
 }
 
-h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
    color: black;
 }
-
 
 .transition-500 {
    transition-property: all;
    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
    transition-duration: 500ms;
+}
+
+button:active {
+   scale: .97;
 }

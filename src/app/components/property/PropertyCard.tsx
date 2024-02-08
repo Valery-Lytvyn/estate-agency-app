@@ -1,63 +1,49 @@
-import React from "react";
-import { PropertyDetailsType } from "../types";
 import Image from "next/image";
-import { priceConverter } from "../utils";
-import { FaArrowRight } from "react-icons/fa6";
-import { animate, motion } from "framer-motion";
 import Link from "next/link";
+import React from "react";
+import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa6";
+import { PropertyDetailsType } from "../../types";
+import { priceConverter } from "../../utils";
+import { propertyDetails } from "@/app/utils/motionVariants";
 
-interface PropertyTileProps {
+interface PropertyCardProps {
   property: PropertyDetailsType;
 }
-const propertyDetails = {
-  initial: {
-    translateY: "5rem",
-    transition: { duration: 0.5 },
-  },
-  animate: {
-    translateY: "0rem",
-    transition: { duration: 0.5 },
-  },
-};
 
-function PropertyTile({ property }: PropertyTileProps) {
+const PropertyCard = ({ property }: PropertyCardProps) => {
   const {
+    id,
     bgImg,
-    slideImg,
-    location,
-    postcode,
     number,
     addressOne,
     addressTwo,
-    status,
     type,
     price,
     area,
     beds,
     baths,
     garages,
-    description,
-    details,
-    amenities,
   } = property;
+
   const formattedPrice = priceConverter(price);
-  const currentName = `${number}${addressOne}${addressTwo}`;
+
   return (
     <div className="group relative min-h-[600px] overflow-hidden">
-      <Link href={`/properties/${currentName}`}>
+      <Link href={`/properties/${id}`}>
         <div className="absolute inset-0 bg-dark-gradient">
           <Image
             src={bgImg}
             alt={`${addressOne} ${addressTwo}`}
             priority
             fill
-            sizes="100wv"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="-z-20 h-auto w-full object-cover transition group-hover:scale-110"
           />
         </div>
         <div className="absolute inset-0 z-20">
           <motion.div
-            className="flex h-full flex-col justify-end gap-5"
+            className="flex h-full flex-col justify-end gap-5 "
             key="propertyDetails"
             initial="initial"
             whileHover="animate"
@@ -79,7 +65,6 @@ function PropertyTile({ property }: PropertyTileProps) {
                 <FaArrowRight />
               </button>
             </div>
-
             <div className="bg-primary">
               <div className="grid grid-cols-4 px-2 py-1">
                 <div className="flex flex-col items-center">
@@ -107,6 +92,6 @@ function PropertyTile({ property }: PropertyTileProps) {
       </Link>
     </div>
   );
-}
+};
 
-export default PropertyTile;
+export default PropertyCard;

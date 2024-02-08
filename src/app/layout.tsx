@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import { Suspense } from "react";
 import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
+import Loading from "./loading";
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,18 +18,22 @@ export const metadata: Metadata = {
   description: "Estate Agency webpage",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
       <body className={poppins.className} suppressHydrationWarning>
         <Navbar />
-        {children}
+        <main className="relative flex-1">
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </main>
         <Footer />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

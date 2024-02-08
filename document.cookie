@@ -1,0 +1,1 @@
+document.cookie = "num="+num+"; SameSite=None; Secure; Partitioned";

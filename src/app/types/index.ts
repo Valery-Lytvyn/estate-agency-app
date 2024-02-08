@@ -43,6 +43,5 @@ export interface PropertyDetailsType {
   baths: number;
   garages: number;
   description: string;
-  details: string;
   amenities: string[];
 }

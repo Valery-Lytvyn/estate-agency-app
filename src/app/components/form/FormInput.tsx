@@ -1,22 +1,24 @@
-import React from "react";
+import React, { memo } from "react";
 
-interface CustomInputProps {
+interface FormInputProps {
   id: string;
   name: string;
   type: "text" | "email";
   placeholder: string;
   value: string;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isSubmitClicked: boolean;
 }
 
-function CustomInput({
+const FormInput = ({
   id,
   name,
   type,
   placeholder,
   value,
   handleInputChange,
-}: CustomInputProps) {
+  isSubmitClicked,
+}: FormInputProps) => {
   return (
     <input
       type={type}
@@ -24,11 +26,11 @@ function CustomInput({
       id={id}
       value={value}
       placeholder={placeholder}
-      onChange={(e) => handleInputChange(e)}
       required
-      className="w-full rounded-lg border px-3 py-2 outline-primary invalid:outline-red-600 "
+      onChange={(e) => handleInputChange(e)}
+      className={`w-full rounded-lg border px-3 py-2 outline-none focus:border-primary ${isSubmitClicked && !value ? "border-red-600" : null}`}
     />
   );
-}
+};
 
-export default CustomInput;
+export default memo(FormInput);

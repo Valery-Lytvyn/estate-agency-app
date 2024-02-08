@@ -1,14 +1,17 @@
-import ServicesSection from "./components/ServicesSection";
-import Slider from "./components/ui/Slider";
-import { slides } from "./data";
+import React from "react";
+import OurServices from "@/app/components/ourServices/OurServices";
+import MainCarousel from "@/app/components/ui/MainCarousel";
+import { slides } from "@/app/data";
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="relative">
-      <Slider slides={slides} />
+    <>
+      <MainCarousel slides={slides} />
       <div className="container py-4 lg:py-8">
-        <ServicesSection />
+        <OurServices />
       </div>
-    </main>
+    </>
   );
-}
+};
+
+export default Home;

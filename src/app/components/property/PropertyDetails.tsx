@@ -1,8 +1,9 @@
 import React from "react";
-import { priceConverter } from "../utils";
-import SectionSubTitle from "./ui/typography/SectionSubTitle";
+import { priceConverter } from "../../utils";
+import SectionSubtitle from "../ui/typography/SectionSubtitle";
+import { MdKeyboardArrowRight as Mark } from "react-icons/md";
 
-interface PropertyInfoProps {
+interface PropertyDetailsProps {
   id: string;
   location: string;
   type: string;
@@ -16,7 +17,7 @@ interface PropertyInfoProps {
   amenities: string[];
 }
 
-function PropertyInfo({
+const PropertyDetails = ({
   id,
   price,
   location,
@@ -28,8 +29,9 @@ function PropertyInfo({
   garages,
   description,
   amenities,
-}: PropertyInfoProps) {
+}: PropertyDetailsProps) => {
   const formattedPrice = priceConverter(price);
+
   return (
     <div className="grid gap-10 md:grid-cols-3">
       <div>
@@ -39,9 +41,8 @@ function PropertyInfo({
           </p>
           <span className="self-end">/{status}</span>
         </div>
-
         <section className="flex flex-col gap-4">
-          <SectionSubTitle subtitle="Quick Summary" />
+          <SectionSubtitle subtitle="Quick Summary" />
           <div className="grid grid-cols-2">
             <p className="text-black">Property ID</p>
             <p className="text-end">{id}</p>
@@ -65,15 +66,15 @@ function PropertyInfo({
       <div className="col-span-2">
         <div className="flex h-full flex-col justify-between gap-4">
           <section>
-            <SectionSubTitle subtitle="Property description" />
+            <SectionSubtitle subtitle="Property description" />
             <p className="text-justify">{description}</p>
           </section>
           <section>
-            <SectionSubTitle subtitle="Amenities" />
+            <SectionSubtitle subtitle="Amenities" />
             <ul className="grid grid-cols-3">
               {amenities.map((amenity) => (
-                <li key={amenity} className="flex items-center gap-1">
-                  <span>-</span>
+                <li key={amenity} className="flex items-center">
+                  <Mark className="text-primary" />
                   {amenity}
                 </li>
               ))}
@@ -83,6 +84,6 @@ function PropertyInfo({
       </div>
     </div>
   );
-}
+};
 
-export default PropertyInfo;
+export default PropertyDetails;

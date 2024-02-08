@@ -5,12 +5,12 @@ interface ModelProps {
   clickHandler: () => void;
 }
 
-function Modal({ children, clickHandler }: ModelProps) {
+const Modal = ({ children, clickHandler }: ModelProps) => {
   return (
-    <div className="fixed inset-0 z-10" onClick={clickHandler}>
+    <div className="fixed inset-0 z-20" onClick={clickHandler}>
       {children}
     </div>
   );
-}
+};
 
 export default Modal;

@@ -1,11 +1,11 @@
 import React from "react";
-import { navListData } from "../data/navListData";
 import Link from "next/link";
-import SocialMediaIcons from "./ui/SocialMediaIcons";
+import SocialIcons from "../ui/SocialIcons";
+import { navListData } from "../../data";
 
-function Footer() {
+const Footer = () => {
   return (
-    <div className=" shadow-inner">
+    <div className="border-b border-primary shadow-inner ">
       <div className="container flex flex-col items-center gap-5 py-5 md:gap-10 md:py-10">
         <ul className="flex  gap-2 sm:flex-row md:gap-10">
           {navListData.map(({ id, path, name }) => (
@@ -17,13 +17,13 @@ function Footer() {
             </li>
           ))}
         </ul>
-        <SocialMediaIcons variants="hover:text-primary" />
+        <SocialIcons variants="hover:text-primary" />
         <p className="text-center">
           Copyright Estate Agency. All rights reserved.
         </p>
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

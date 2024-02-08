@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { SlideType } from "@/app/types";
-import HeroSlide from "../HeroSlide";
+import MainSlide from "./MainSlide";
 import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
-interface SliderProps {
+interface MainCarouselProps {
   slides: SlideType[];
 }
 
-function Slider({ slides }: SliderProps) {
+const MainCarousel = ({ slides }: MainCarouselProps) => {
   return (
     <Swiper
       spaceBetween={0}
@@ -25,11 +25,11 @@ function Slider({ slides }: SliderProps) {
         slides.length &&
         slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <HeroSlide slide={slide} />
+            <MainSlide slide={slide} />
           </SwiperSlide>
         ))}
     </Swiper>
   );
-}
+};
 
-export default Slider;
+export default MainCarousel;

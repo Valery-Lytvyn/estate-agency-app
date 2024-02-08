@@ -7,10 +7,10 @@ interface MenuToggleButtonProps {
   isMenuOpen: boolean;
 }
 
-function MenuToggleButton({
+const MenuToggleButton = ({
   toggleHandler,
   isMenuOpen,
-}: MenuToggleButtonProps) {
+}: MenuToggleButtonProps) => {
   return (
     <button
       onClick={toggleHandler}
@@ -23,6 +23,6 @@ function MenuToggleButton({
       )}
     </button>
   );
-}
+};
 
 export default MenuToggleButton;

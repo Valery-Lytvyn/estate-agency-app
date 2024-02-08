@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-function AboutSection() {
+const AboutUs = () => {
   return (
     <div className="flex flex-col-reverse gap-10 pt-14 md:flex-row">
       <div className="stretch relative min-h-[400px] flex-1 overflow-hidden pt-4">
@@ -10,7 +10,7 @@ function AboutSection() {
           alt="keys"
           fill
           priority
-          sizes="100wv"
+          sizes="(max-width:640px) 100vw, 33vw"
           className="h-full w-full object-cover"
         />
       </div>
@@ -19,7 +19,6 @@ function AboutSection() {
           EstateAgency <br />
           <span className="text-black">Exclusive Property</span>
         </p>
-
         <p className="border-y-4 border-primary text-justify">
           Established in 2015, our fictitious estate agency has been a stalwart
           in the real estate arena. With a seasoned team, we specialize in
@@ -39,6 +38,6 @@ function AboutSection() {
       </div>
     </div>
   );
-}
+};
 
-export default AboutSection;
+export default AboutUs;

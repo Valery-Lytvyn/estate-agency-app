@@ -1,14 +1,14 @@
 "use client";
-import React from "react";
 import Link from "next/link";
-import { navListData } from "@/app/data/navListData";
 import { usePathname } from "next/navigation";
+import React from "react";
+import { navListData } from "@/app/data";
 
-function NavList() {
+const NavList = () => {
   const pathName = usePathname();
 
   return (
-    <ul className="flex flex-col gap-5 md:flex-row md:items-center">
+    <ul className=" flex flex-col gap-5 md:flex-row md:items-center">
       {navListData.map(({ id, path, name }) => (
         <li
           key={id}
@@ -24,6 +24,6 @@ ${pathName === path ? "w-full" : null}
       ))}
     </ul>
   );
-}
+};
 
 export default NavList;

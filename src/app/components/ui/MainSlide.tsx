@@ -1,21 +1,22 @@
-import { SlideType } from "@/app/types";
-import { priceConverter } from "@/app/utils";
 import Image from "next/image";
 import React from "react";
+import { SlideType } from "@/app/types";
+import { priceConverter } from "@/app/utils";
 
-function HeroSlide({ slide }: { slide: SlideType }) {
+const MainSlide = ({ slide }: { slide: SlideType }) => {
   const { bgImg, subtitle, code, number, lineOne, lineTwo, type, price } =
     slide;
 
   const formattedPrice = priceConverter(price);
 
   return (
-    <div className={`w-ful h-[600px] lg:h-screen `}>
+    <div className={`h-[600px] w-full lg:h-screen `}>
       <div className="absolute inset-0  bg-dark-gradient">
         <Image
           src={bgImg}
           alt={subtitle}
           fill
+          sizes="(max-width: 640px) 100vw, 50vw"
           priority
           className="-z-20 h-auto w-full object-cover"
         />
@@ -32,7 +33,6 @@ function HeroSlide({ slide }: { slide: SlideType }) {
               {lineTwo}
             </p>
           </div>
-
           <div className="w-80 rounded-full border border-primary bg-opacity-20 bg-clip-padding backdrop-blur-sm backdrop-filter ">
             <div className="flex  items-center justify-between gap-2 px-8 py-4 text-2xl ">
               <p>{type}</p>
@@ -43,6 +43,6 @@ function HeroSlide({ slide }: { slide: SlideType }) {
       </div>
     </div>
   );
-}
+};
 
-export default HeroSlide;
+export default MainSlide;
