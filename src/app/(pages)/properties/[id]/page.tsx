@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import AgentContact from "@/app/components/agent/AgentContact";
 import PropertyDetails from "@/app/components/property/PropertyDetails";
 import Breadcrumb from "@/app/components/navigation/Breadcrumb";
@@ -9,10 +8,6 @@ import SectionTitle from "@/app/components/ui/typography/SectionTitle";
 import { PropertyDetailsType } from "@/app/types";
 import { properties } from "@/app/data";
 import Loading from "@/app/loading";
-import Swiper from "swiper";
-import { Autoplay } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
-import "swiper/css";
 import PropertyCarousel from "@/app/components/ui/PropertyCarousel";
 
 const SingleProperty = () => {
