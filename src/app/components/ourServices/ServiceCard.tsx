@@ -36,6 +36,7 @@ const ServiceCard = ({ title, description }: ServiceCardProps) => {
       <button
         className="transition-500 group flex items-center gap-1 font-medium hover:font-extrabold "
         onClick={clickHandler}
+        aria-label="Toggle Button"
       >
         {isShowMore ? "Read less" : "Read more"}
         <ArrowForward className="transition-500 group-hover:text-xl" />

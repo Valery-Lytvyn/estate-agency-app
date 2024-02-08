@@ -13,6 +13,7 @@ const MenuToggleButton = ({
 }: MenuToggleButtonProps) => {
   return (
     <button
+      aria-label="Menu Toggle Button"
       onClick={toggleHandler}
       className={`transition-500 rounded-md border px-3 py-1 ${isMenuOpen ? "border-3 border-black" : null}`}
     >

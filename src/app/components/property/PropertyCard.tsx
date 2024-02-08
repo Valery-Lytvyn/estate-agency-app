@@ -60,7 +60,9 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
                   <p className="font-bold text-primary">{formattedPrice}</p>
                 </div>
               </div>
-              <button className="flex items-center gap-2 text-white hover:font-semibold ">
+              <button className="flex items-center gap-2 text-white hover:font-semibold "
+              aria-label="Link"
+              >
                 Click here to view
                 <FaArrowRight />
               </button>
